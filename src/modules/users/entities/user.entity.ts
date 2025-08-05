@@ -11,6 +11,7 @@ import { Appointment } from 'src/modules/appointments/entities/appointment.entit
 
 export enum UserRole {
   ADMIN = 'admin',
+  EMPLOYEE = 'employee',
   CLIENT = 'client',
 }
 
@@ -29,10 +30,10 @@ export class User {
   email: string;
 
   // La contraseña se guarda hasheada. 'select: false' evita que se envíe en las consultas por defecto.
-  @Column({ type: 'varchar', nullable: false, select: false })
+  @Column({ type: 'varchar', nullable: false, length: 100, select: false })
   password: string;
 
-  @Column({ type: 'varchar', length: 20, unique: true, nullable: false })
+  @Column({ type: 'varchar', length: 100, unique: true, nullable: false })
   phone: string;
 
   @Column({
