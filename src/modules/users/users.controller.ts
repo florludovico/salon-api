@@ -21,7 +21,6 @@ import { UserRole } from './entities/user.entity';
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
-  //@ApiBearerAuth()
   @Get()
   //@Roles(Role.Admin)
   //@UseGuards(AuthGuard, RolesGuard)
@@ -35,7 +34,6 @@ export class UsersController {
     return this.usersService.getUsers(page, limit, role, search);
   }
 
-  //@ApiBearerAuth()
   @Get(':id')
   //@Roles(Role.Admin)
   //@UseGuards(AuthGuard, RolesGuard)
@@ -43,7 +41,6 @@ export class UsersController {
     return this.usersService.getUser(id);
   }
 
-  //@ApiBearerAuth()
   @Put(':id')
   //@Roles(Role.Admin)
   //@UseGuards(AuthGuard, RolesGuard)
@@ -54,7 +51,6 @@ export class UsersController {
     return this.usersService.updateUser(id, data);
   }
 
-  //@ApiBearerAuth()
   @Delete(':id')
   //@Roles(UserRole.ADMIN)
   //@UseGuards(AuthGuard, RolesGuard)
@@ -63,7 +59,6 @@ export class UsersController {
     return this.usersService.remove(id);
   }
 
-  //@ApiBearerAuth()
   @Put(':id/restore')
   //@Roles(UserRole.ADMIN)
   //@UseGuards(AuthGuard, RolesGuard)
